@@ -42,6 +42,7 @@
     <Compile Include="Coordinates.cs" />
     <Compile Include="DaylightService.cs" />
     <Compile Include="Extensions\DoubleExtensions.cs" />
+    <Compile Include="IDaylightService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
