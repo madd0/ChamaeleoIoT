@@ -10,18 +10,16 @@ namespace ChamaeleoIoT.Tests
         {
             Today = new ZonedDateTime(Now, TestTimeZone);
 
-            SunriseToday = new ZonedDateTime(SunriseInstant, TestTimeZone);
+            SunriseToday = TestTimeZone.AtStrictly(new LocalDateTime(2013, 9, 4, 7, 12));
 
-            SunsetToday = new ZonedDateTime(SunsetInstant, TestTimeZone);
+            SunsetToday = TestTimeZone.AtStrictly(new LocalDateTime(2013, 9, 4, 20, 29));
         }
+
+        public static Coordinates Here { get; } = new Coordinates(48.8566, 2.3522);
 
         public static Instant Now { get; } = Instant.FromUtc(2013, 9, 4, 13, 14, 15);
 
-        public static Instant SunriseInstant { get; } = Instant.FromUtc(2013, 9, 4, 7, 13, 0);
-
         public static ZonedDateTime SunriseToday { get; }
-
-        public static Instant SunsetInstant { get; } = Instant.FromUtc(2013, 9, 4, 20, 28, 0);
 
         public static ZonedDateTime SunsetToday { get; }
 
