@@ -1,4 +1,6 @@
-﻿namespace ChamaeleoIoT
+﻿using System;
+
+namespace ChamaeleoIoT
 {
     public struct Coordinates
     {
@@ -7,6 +9,16 @@
 
         public Coordinates(double latitude, double longitude)
         {
+            if (longitude > 180 || longitude < -180)
+            {
+                throw new ArgumentOutOfRangeException(nameof(longitude), "Longitude must be in range [-180; 180].");
+            }
+
+            if (latitude > 90 || latitude < -90)
+            {
+                throw new ArgumentOutOfRangeException(nameof(latitude), "Latitude must be in range [-90; 90].");
+            }
+
             _latitude = latitude;
             _longitude = longitude;
         }
